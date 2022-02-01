@@ -30,12 +30,19 @@ export const Data = styled.div`
   }
 
   h2 {
-    font-size: 46px;
+    width: 280px;
+    max-width: 280px;
     color: #444e72;
+
+    font-size: 46px;
     font-weight: 900;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   h3 {
+    max-width: 150px;
     font-size: 24px;
   }
 `;

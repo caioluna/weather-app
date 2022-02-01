@@ -1,32 +1,47 @@
+import React, { useContext, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-
-import React from 'react';
 import { Container, Content } from './styles';
+import { WeatherContext } from '../../contexts/WeatherContext';
 
 export default function Map() {
-  const myLocation = { lat: -23.531615, lng: -46.600925 };
+  const { getCurrentMarkerLocation } = useContext(WeatherContext);
+  const [markerLocation, setMarkerLocation] = useState({
+    lat: -23.5316,
+    lng: -46.6009,
+  });
+
+  const mapsKey = import.meta.env.VITE_MAPS_API_KEY;
+  const myLatLng = markerLocation;
 
   const loader = new Loader({
-    apiKey: 'AIzaSyCVBN9dQpTf7jcmB8_u4h4pvQ0YlGB1g4E',
+    apiKey: mapsKey,
     version: 'weekly',
   });
 
   loader.load().then(() => {
     const map = new google.maps.Map(document.getElementById('map'), {
-      center: myLocation,
+      center: myLatLng,
       zoom: 8,
       disableDefaultUI: true,
     });
 
     let marker = new google.maps.Marker({
-      position: myLocation,
+      position: markerLocation,
       map: map,
     });
 
-    map.addListener('click', (event) => {
-      marker.setPosition(event.latLng);
+    map.addListener('click', (mapsMouseEvent) => {
+      const lat = Number(mapsMouseEvent.latLng.lat().toFixed(4));
+      const lng = Number(mapsMouseEvent.latLng.lng().toFixed(4));
 
-      // const latLng = JSON.stringify(event.latLng.toJSON(), null, 2);
+      setMarkerLocation({
+        lat: lat,
+        lng: lng,
+      });
+
+      marker.setPosition(markerLocation);
+      getCurrentMarkerLocation(`${lat},${lng}`);
+      marker.setPosition('');
     });
   });
 
