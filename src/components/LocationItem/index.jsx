@@ -13,20 +13,22 @@ export default function LocationItem() {
           <h3>Cloudy</h3>
           <Data>
             <table>
-              <tr>
-                <td>
-                  <span className='icon'>o</span> Wind
-                </td>
-                <td className='separator'>|</td>
-                <td>10 km/h</td>
-              </tr>
-              <tr>
-                <td>
-                  <span className='icon'>o</span> Hum
-                </td>
-                <td className='separator'>|</td>
-                <td>54%</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>
+                    <span className='icon'>o</span> Wind
+                  </td>
+                  <td className='separator'>|</td>
+                  <td>10 km/h</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span className='icon'>o</span> Hum
+                  </td>
+                  <td className='separator'>|</td>
+                  <td>54%</td>
+                </tr>
+              </tbody>
             </table>
           </Data>
         </Content>

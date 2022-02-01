@@ -7,16 +7,11 @@ export const Container = styled.div`
   justify-content: space-around;
 `;
 
-export const Data = styled.h1`
+export const Data = styled.div`
   display: flex;
   flex-direction: column;
   height: 150px;
   position: relative;
-
-  h2 {
-    color: #444e72;
-    font-weight: 900;
-  }
 
   h1 {
     position: absolute;
@@ -32,6 +27,12 @@ export const Data = styled.h1`
     span {
       font-size: 70px;
     }
+  }
+
+  h2 {
+    font-size: 46px;
+    color: #444e72;
+    font-weight: 900;
   }
 
   h3 {

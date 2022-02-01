@@ -14,10 +14,6 @@ export const Container = styled.div`
 
     padding: 0 20px;
 
-    /* display: grid;
-    grid-template-columns: 30px 1fr;
-    gap: 16px; */
-
     border-radius: 8px;
     overflow: hidden;
   }
@@ -25,7 +21,8 @@ export const Container = styled.div`
   input {
     width: 100%;
     height: 100%;
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
+    background-color: transparent;
   }
 `;
