@@ -1,6 +1,5 @@
 import React from 'react';
 import Dashboard from './components/Dashboard';
-import Favorites from './components/Favorites';
 
 import { WeatherProvider } from './contexts/WeatherContext';
 import { GlobalStyle } from './styles/global';

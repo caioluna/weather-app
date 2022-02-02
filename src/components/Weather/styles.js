@@ -14,35 +14,32 @@ export const Data = styled.div`
   position: relative;
 
   h1 {
-    position: absolute;
-    display: inline-block;
+    max-width: 300px;
 
-    bottom: 0;
-    right: 0;
+    color: #444e72;
+    font-weight: 900;
+    line-height: 30px;
+  }
 
-    font-size: 91px;
-    line-height: 61px;
-    font-weight: 400;
+  span {
+    max-width: 300px;
+  }
+`;
+
+export const Temperature = styled.div`
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+
+  h2 {
+    max-width: 150px;
+  }
+
+  p {
+    font-size: 90px;
 
     span {
       font-size: 70px;
     }
-  }
-
-  h2 {
-    width: 280px;
-    max-width: 280px;
-    color: #444e72;
-
-    font-size: 46px;
-    font-weight: 900;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  h3 {
-    max-width: 150px;
-    font-size: 24px;
   }
 `;

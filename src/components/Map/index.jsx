@@ -6,8 +6,6 @@ import { WeatherContext } from '../../contexts/WeatherContext';
 
 export default function Map() {
   const { getCurrentMarkerLocation } = useContext(WeatherContext);
-  const [initMap, setInitMap] = useState({ lat: -23.5316, lng: -46.6009 });
-  const [markerLocation, setMarkerLocation] = useState();
 
   const mapsKey = import.meta.env.VITE_MAPS_API_KEY;
 
@@ -17,34 +15,31 @@ export default function Map() {
   });
 
   loader.load().then(() => {
+    google.maps.event.addDomListener(window, 'load', initMap);
+  });
+
+  const initLocation = { lat: -23.5316, lng: -46.6009 };
+
+  function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
-      center: initMap,
+      center: initLocation,
       zoom: 8,
       disableDefaultUI: true,
     });
 
     let marker = new google.maps.Marker({
-      position: markerLocation,
+      position: initLocation,
       map: map,
     });
 
-    map.addListener('click', (mapsMouseEvent) => {
-      const lat = Number(mapsMouseEvent.latLng.lat().toFixed(4));
-      const lng = Number(mapsMouseEvent.latLng.lng().toFixed(4));
-      setMarkerLocation({
-        lat: lat,
-        lng: lng,
-      });
-      // marker.setPosition(mapsMouseEvent.latLng);
-      // getCurrentMarkerLocation(`${lat},${lng}`);
-      getCurrentMarkerLocation(markerLocation);
+    map.addListener('click', (event) => {
+      const latLngValue = event.latLng.toUrlValue(4);
 
-      marker.setOptions({
-        position: markerLocation,
-      });
-      console.log(markerLocation);
+      marker.setPosition(event.latLng);
+
+      getCurrentMarkerLocation(latLngValue);
     });
-  });
+  }
 
   return (
     <Container>

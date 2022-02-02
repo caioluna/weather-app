@@ -5,16 +5,8 @@ import { WeatherContext } from '../../contexts/WeatherContext';
 
 export default function SearchBar() {
   const [location, setLocation] = useState('');
-  const { getCurrentCity } = useContext(WeatherContext);
 
-  useEffect(() => {
-    const btn = document.querySelector('.search-button');
-    if (location === '') {
-      btn.disabled = true;
-    } else {
-      btn.disabled = false;
-    }
-  }, [location]);
+  const { getCurrentCity } = useContext(WeatherContext);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -31,10 +23,14 @@ export default function SearchBar() {
           type='text'
           placeholder='Procurar local...'
         />
+        <button
+          type='submit'
+          className='search-button'
+          disabled={!location ? true : false}
+        >
+          Ir
+        </button>
       </label>
-      <button type='submit' className='search-button'>
-        Submit
-      </button>
     </Container>
   );
 }
