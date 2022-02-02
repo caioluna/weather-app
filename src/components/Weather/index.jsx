@@ -16,7 +16,7 @@ export default function Weather() {
         <h2>{city}</h2>
         <h3>{condition}</h3>
         <h1>
-          {parseInt(Math.round(temperature))}
+          {Number(temperature).toFixed()}
           <span>°</span>
         </h1>
       </Data>
