@@ -3,12 +3,13 @@ import React, { useEffect, useState, createContext } from 'react';
 export const WeatherContext = createContext();
 
 export function WeatherProvider(props) {
-  const [currentCity, setCurrentCity] = useState('Cidade');
+  const [currentCity, setCurrentCity] = useState();
   const [currentRegion, setCurrentRegion] = useState();
   const [currentCountry, setCurrentCountry] = useState();
   const [weatherCondition, setWeatherCondition] = useState();
+  const [conditionIcon, setConditionIcon] = useState();
   const [temperature, setTemperature] = useState();
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState('Sao Paulo');
 
   const weatherKey = import.meta.env.VITE_WEATHER_API_KEY;
 
@@ -22,6 +23,7 @@ export function WeatherProvider(props) {
         setCurrentRegion(data.location.region);
         setCurrentCountry(data.location.country);
         setWeatherCondition(data.current.condition.text);
+        setConditionIcon(data.current.condition.icon);
         setTemperature(data.current.temp_c);
       })
       .catch((error) => console.log(`Erro: ${error}`));
@@ -45,6 +47,7 @@ export function WeatherProvider(props) {
         country: currentCountry,
         weatherCondition: weatherCondition,
         temperature: temperature,
+        icon: conditionIcon,
         getCurrentCity: getCurrentCity,
         getCurrentMarkerLocation: getCurrentMarkerLocation,
       }}

@@ -1,18 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { WeatherContext } from '../../contexts/WeatherContext';
-
-import SearchBar from '../SearchBar';
 
 import { Container, Data, Temperature } from './styles';
 
 export default function Weather() {
-  const { city, country, weatherCondition, temperature, region } =
+  const { city, country, weatherCondition, temperature, region, icon } =
     useContext(WeatherContext);
 
   return (
     <Container>
-      <SearchBar />
-
       <Data>
         <h1>{city}</h1>
         <span>
@@ -20,12 +16,14 @@ export default function Weather() {
         </span>
 
         <Temperature>
-          {/* <img src={weatherData.current.condition.icon} alt='' /> */}
           <h2>{weatherCondition}</h2>
-          <p>
-            {Number(temperature).toFixed()}
-            <span>°</span>
-          </p>
+          <div>
+            <img src={icon} alt='' />
+            <p>
+              {Number(temperature).toFixed()}
+              <span>°</span>
+            </p>
+          </div>
         </Temperature>
       </Data>
     </Container>

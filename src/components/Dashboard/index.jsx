@@ -1,15 +1,26 @@
 import React from 'react';
 
+import SearchBar from '../SearchBar';
 import Weather from '../Weather';
 import Map from '../Map';
 
-import { Container } from './styles';
+import { Container, LogoArea } from './styles';
 
 export default function Dashboard() {
   return (
-    <Container>
-      <Weather />
-      <Map />
-    </Container>
+    <>
+      <LogoArea>
+        <img
+          src='https://adroitrobotics.com/wp-content/uploads/2019/10/logo_white.png'
+          alt=''
+        />
+        <h1>| &nbsp; Weather</h1>
+      </LogoArea>
+      <Container>
+        <SearchBar />
+        <Weather />
+        <Map />
+      </Container>
+    </>
   );
 }

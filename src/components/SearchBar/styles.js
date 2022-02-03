@@ -13,9 +13,6 @@ export const Container = styled.form`
 
     background: #fff;
     box-shadow: inset 2px -3px 6px rgba(0, 0, 0, 0.1);
-
-    border-radius: 8px;
-    overflow: hidden;
   }
 
   input {
@@ -30,7 +27,7 @@ export const Container = styled.form`
 
   .search-button {
     /* position: absolute; */
-    background-color: #444e72;
+    background-color: #2b4976;
     color: #fff;
     padding: 0 10px;
   }
