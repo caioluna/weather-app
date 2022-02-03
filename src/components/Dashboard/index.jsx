@@ -3,8 +3,9 @@ import React from 'react';
 import SearchBar from '../SearchBar';
 import Weather from '../Weather';
 import Map from '../Map';
+import Forecast from '../Forecast';
 
-import { Container, LogoArea } from './styles';
+import { Container, LogoArea, Footer } from './styles';
 
 export default function Dashboard() {
   return (
@@ -16,11 +17,20 @@ export default function Dashboard() {
         />
         <h1>| &nbsp; Weather</h1>
       </LogoArea>
+
       <Container>
         <SearchBar />
         <Weather />
         <Map />
+        <Forecast />
       </Container>
+
+      <Footer>
+        Powered by&nbsp;
+        <a href='https://www.weatherapi.com/' title='Free Weather API'>
+          WeatherAPI.com
+        </a>
+      </Footer>
     </>
   );
 }

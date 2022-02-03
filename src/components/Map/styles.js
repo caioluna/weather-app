@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 500px;
-  /* height: 300px; */
+  max-width: 100%;
 
   display: flex;
   justify-content: center;
 
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export const Content = styled.div`
@@ -16,6 +16,7 @@ export const Content = styled.div`
 
   #map {
     width: 100%;
+    max-width: 100%;
     height: 100%;
   }
 `;

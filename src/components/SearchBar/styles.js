@@ -4,15 +4,18 @@ export const Container = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   label {
     display: grid;
     grid-template-columns: 3fr 1fr;
+
     width: 300px;
     height: 42px;
+    border-radius: 3px;
 
     background: #fff;
-    box-shadow: inset 2px -3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px -1px 2px rgba(0, 0, 0, 0.3);
   }
 
   input {
@@ -26,7 +29,7 @@ export const Container = styled.form`
   }
 
   .search-button {
-    /* position: absolute; */
+    border-radius: 0 3px 3px 0;
     background-color: #2b4976;
     color: #fff;
     padding: 0 10px;
