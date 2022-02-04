@@ -5,7 +5,7 @@ export function WeatherProvider({ children }) {
   const [query, setQuery] = useState('Sao Paulo');
   const [weatherData, setWeatherData] = useState();
 
-  const weatherKey = import.meta.env.VITE_WEATHER_API_KEY;
+  const weatherKey = '351f1e2d9281459abdd04757223101';
 
   function getCurrentCity(city) {
     //gets the name typed in the search input
