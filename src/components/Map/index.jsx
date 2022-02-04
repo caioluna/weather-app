@@ -7,7 +7,7 @@ import { WeatherContext } from '../../contexts/WeatherContext';
 export default function Map() {
   const { getCurrentMarkerLocation } = useContext(WeatherContext);
 
-  const mapsKey = import.meta.env.VITE_MAPS_API_KEY;
+  const mapsKey = 'AIzaSyD-X4W2FqbwXP2JLdj7WoIskCoVS_yCKK4';
 
   const loader = new Loader({
     apiKey: mapsKey,
