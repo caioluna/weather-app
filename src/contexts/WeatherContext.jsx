@@ -4,13 +4,6 @@ export const WeatherContext = createContext();
 export function WeatherProvider({ children }) {
   const [query, setQuery] = useState('Sao Paulo');
   const [weatherData, setWeatherData] = useState();
-  // const [forecastData, setForecastData] = useState([]);
-  // const [currentCity, setCurrentCity] = useState();
-  // const [currentRegion, setCurrentRegion] = useState();
-  // const [currentCountry, setCurrentCountry] = useState();
-  // const [weatherCondition, setWeatherCondition] = useState();
-  // const [conditionIcon, setConditionIcon] = useState();
-  // const [temperature, setTemperature] = useState();
 
   const weatherKey = import.meta.env.VITE_WEATHER_API_KEY;
 
@@ -31,13 +24,6 @@ export function WeatherProvider({ children }) {
       .then((response) => response.json())
       .then((data) => {
         setWeatherData(data);
-        // setForecastData(data);
-        // setCurrentCity(data.location.name);
-        // setCurrentRegion(data.location.region);
-        // setCurrentCountry(data.location.country);
-        // setWeatherCondition(data.current.condition.text);
-        // setConditionIcon(data.current.condition.icon);
-        // setTemperature(data.current.temp_c);
       })
       .catch((error) => console.log(`Erro: ${error}`));
   }, [query]);
@@ -45,16 +31,9 @@ export function WeatherProvider({ children }) {
   return (
     <WeatherContext.Provider
       value={{
-        // city: currentCity,
-        // region: currentRegion,
-        // country: currentCountry,
-        // weatherCondition: weatherCondition,
-        // temperature: temperature,
-        // icon: conditionIcon,
         getCurrentCity: getCurrentCity,
         getCurrentMarkerLocation: getCurrentMarkerLocation,
         data: weatherData,
-        // forecast: forecastData,
       }}
     >
       {children}

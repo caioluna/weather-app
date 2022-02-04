@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 500px;
   max-width: 100vw;
-  margin: 50px auto 0;
+  margin: 20px auto 30px;
 
   @media (max-width: 530px) {
     padding: 0 20px;
@@ -45,7 +45,7 @@ export const Footer = styled.footer`
   align-items: center;
   height: 50px;
 
-  margin-top: 50px;
+  margin-top: 20px;
 
   color: #fff;
   background-color: #2b4976;

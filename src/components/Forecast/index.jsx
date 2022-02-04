@@ -6,6 +6,7 @@ import { Container } from './styles';
 
 export default function Forecast() {
   const { data } = useContext(WeatherContext);
+
   return (
     <Container>
       {data &&

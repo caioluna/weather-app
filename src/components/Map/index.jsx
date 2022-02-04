@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 
 import { Container, Content } from './styles';

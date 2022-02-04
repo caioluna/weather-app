@@ -6,7 +6,7 @@ export default function ForecastItem({ data }) {
   const weekDay = ['Dom', 'Seg', 'Ter', 'Quar', 'Qui', 'Sex', 'Sáb'];
 
   const date = new Date(data.date).getUTCDay();
-  console.log(data);
+
   return (
     <Container>
       <h3>{weekDay[date]}</h3>

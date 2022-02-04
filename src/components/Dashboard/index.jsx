@@ -21,7 +21,9 @@ export default function Dashboard() {
       <Container>
         <SearchBar />
         <Weather />
+
         <Map />
+
         <Forecast />
       </Container>
 
