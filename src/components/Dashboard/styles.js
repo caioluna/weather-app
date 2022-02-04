@@ -25,8 +25,7 @@ export const LogoArea = styled.header`
   width: 100vw;
   height: 100px;
 
-  background-color: #2b4976;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
 
   img {
     width: 70px;
@@ -48,7 +47,6 @@ export const Footer = styled.footer`
   margin-top: 20px;
 
   color: #fff;
-  background-color: #2b4976;
 
   a {
     color: #fff;

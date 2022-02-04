@@ -1,58 +1,64 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 10px 20px;
+  gap: 30px;
 
-  padding: 40px 15px 15px;
-
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 3px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.5);
 
-  h3 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  cursor: default;
 
-    padding: 6px 0;
-
-    width: 100%;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #2b4976;
+  &:hover {
+    box-shadow: inset 0px 0 10px 3px rgb(0 0 0 / 50%);
   }
 
-  .minMaxArea {
-    gap: 15px;
-    width: 100%;
-    margin-top: 10px;
-
-    display: flex;
-    justify-content: space-between;
+  h3 {
+    display: grid;
+    place-items: center;
+    justify-items: start;
 
     text-align: center;
+    color: #2b4976;
+    color: #fff;
+  }
+
+  .image {
+    display: grid;
+    place-items: center;
+    img {
+      display: flex;
+    }
   }
 `;
 
 export const MinMax = styled.div`
-  width: 50px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 3px;
-  font-weight: 900;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 
-  p {
-    font-weight: 400;
-    border-radius: 3px 3px 0 0;
-    padding: 3px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 
-    background-color: #2b4976;
-    color: #fff;
-    margin-bottom: 5px;
+    span {
+      color: #fff;
+      font-size: 30px;
+      display: flex;
+
+      span {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      padding: 3px;
+      color: #6260e7;
+    }
   }
 `;

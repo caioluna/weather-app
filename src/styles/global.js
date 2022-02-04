@@ -9,12 +9,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(192.05deg, #47BFDF 0%, #4A91FF 100%) no-repeat;
+    background: linear-gradient(45deg, rgba(9,13,58,1) 40%, rgba(5,98,145,1) 100%);
     -webkit-font-smoothing: antialiased;
 
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+
+    cursor: default;
   }
 
   body, input, textarea, button {

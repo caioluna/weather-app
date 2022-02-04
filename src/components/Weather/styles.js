@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 
   display: flex;
   flex-direction: column;
@@ -25,7 +25,8 @@ export const Data = styled.div`
     overflow-wrap: break-word;
     text-overflow: ellipsis;
 
-    color: #2b4976;
+    color: #fff;
+
     font-weight: 900;
   }
 
@@ -44,20 +45,20 @@ export const Temperature = styled.div`
     position: relative;
 
     img {
+      opacity: 0.3;
       position: absolute;
       z-index: -1;
 
-      width: 70px;
+      width: 125px;
 
-      top: -25px;
-      left: -50px;
+      top: -50px;
+      left: -70px;
     }
 
     p {
       font-size: 90px;
-      font-weight: 900;
-      color: #2b4976;
       text-shadow: -20px 20px 25px rgba(0, 0, 0, 0.15);
+      color: #fff;
 
       span {
         font-size: 70px;
