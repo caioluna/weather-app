@@ -1,17 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 
 import { Container, Content } from './styles';
 import { WeatherContext } from '../../contexts/WeatherContext';
 
 export default function Map() {
-  const { getCurrentMarkerLocation, centerMap } = useContext(WeatherContext);
+  const { getCurrentMarkerLocation } = useContext(WeatherContext);
 
   const mapsKey = 'AIzaSyD-X4W2FqbwXP2JLdj7WoIskCoVS_yCKK4';
-
-  useEffect(() => {
-    handleCenterMap();
-  }, [centerMap]);
 
   const loader = new Loader({
     apiKey: mapsKey,
@@ -37,25 +33,11 @@ export default function Map() {
     });
 
     map.addListener('click', (event) => {
-      marker.setPosition(event.latLng);
-      getCurrentMarkerLocation(event.latLng.toUrlValue(4));
-    });
-  }
+      const latLngValue = event.latLng.toUrlValue(4);
 
-  function handleCenterMap() {
-    const map = new google.maps.Map(document.getElementById('map'), {
-      center: centerMap,
-      zoom: 8,
-      disableDefaultUI: true,
-    });
-
-    const marker = new google.maps.Marker({
-      position: centerMap,
-      map: map,
-    });
-    map.addListener('click', (event) => {
       marker.setPosition(event.latLng);
-      getCurrentMarkerLocation(event.latLng.toUrlValue(4));
+
+      getCurrentMarkerLocation(latLngValue);
     });
   }
 
