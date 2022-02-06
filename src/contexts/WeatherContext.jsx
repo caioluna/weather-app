@@ -2,6 +2,7 @@ import React, { useEffect, useState, createContext } from 'react';
 export const WeatherContext = createContext();
 
 export function WeatherProvider({ children }) {
+  const [centerMap, setCenterMap] = useState();
   const [query, setQuery] = useState('Sao Paulo');
   const [weatherData, setWeatherData] = useState();
 
@@ -17,6 +18,13 @@ export function WeatherProvider({ children }) {
     setQuery(coordinates);
   }
 
+  function getCenterMap(lat, lon) {
+    setCenterMap({
+      lat: lat,
+      lng: lon,
+    });
+  }
+
   useEffect(() => {
     fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${query}&days=7&aqi=no&alerts=no&lang=pt`
@@ -24,6 +32,7 @@ export function WeatherProvider({ children }) {
       .then((response) => response.json())
       .then((data) => {
         setWeatherData(data);
+        getCenterMap(data.location.lat, data.location.lon);
       })
       .catch((error) => console.log(`Erro: ${error}`));
   }, [query]);
@@ -34,6 +43,7 @@ export function WeatherProvider({ children }) {
         getCurrentCity: getCurrentCity,
         getCurrentMarkerLocation: getCurrentMarkerLocation,
         data: weatherData,
+        centerMap: centerMap,
       }}
     >
       {children}
