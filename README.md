@@ -4,7 +4,7 @@
 
 Clone the repository to your computer.
 
-> https://github.com/caioluna/adroit-weather-app.git
+> https://github.com/caioluna/weather-app
 
 In the root folder of the project run:
 
