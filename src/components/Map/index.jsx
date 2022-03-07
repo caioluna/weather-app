@@ -7,7 +7,7 @@ import { WeatherContext } from '../../contexts/WeatherContext';
 export default function Map() {
   const { getCurrentMarkerLocation } = useContext(WeatherContext);
 
-  const mapsKey = 'AIzaSyD-X4W2FqbwXP2JLdj7WoIskCoVS_yCKK4';
+  const mapsKey = 'AIzaSyCzU0JTa700YE3b-0UnZB0Hqk1yRDoRm8Y';
 
   const loader = new Loader({
     apiKey: mapsKey,

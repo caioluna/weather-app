@@ -5,18 +5,14 @@ import Weather from '../Weather';
 import Map from '../Map';
 import Forecast from '../Forecast';
 
-import { Container, LogoArea, Footer } from './styles';
+import { Container, Header, Footer } from './styles';
 
 export default function Dashboard() {
   return (
     <>
-      <LogoArea>
-        <img
-          src='https://adroitrobotics.com/wp-content/uploads/2019/10/logo_white.png'
-          alt=''
-        />
-        <h1>| &nbsp; Weather</h1>
-      </LogoArea>
+      <Header>
+        <h1>Weather</h1>
+      </Header>
 
       <Container>
         <SearchBar />

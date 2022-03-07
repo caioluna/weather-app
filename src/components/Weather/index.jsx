@@ -5,6 +5,7 @@ import { Container, Data, Temperature } from './styles';
 
 export default function Weather() {
   const { data } = useContext(WeatherContext);
+
   return (
     <Container>
       {data && (

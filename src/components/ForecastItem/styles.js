@@ -12,10 +12,6 @@ export const Container = styled.div`
 
   cursor: default;
 
-  &:hover {
-    box-shadow: inset 0px 0 10px 3px rgb(0 0 0 / 50%);
-  }
-
   h3 {
     display: grid;
     place-items: center;
@@ -58,7 +54,7 @@ export const MinMax = styled.div`
 
     p {
       padding: 3px;
-      color: #6260e7;
+      color: #062433;
     }
   }
 `;

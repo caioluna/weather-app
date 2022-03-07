@@ -17,7 +17,7 @@ export const Container = styled.div`
   gap: 30px;
 `;
 
-export const LogoArea = styled.header`
+export const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,11 +26,6 @@ export const LogoArea = styled.header`
   height: 100px;
 
   border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-
-  img {
-    width: 70px;
-    margin-right: 30px;
-  }
 
   h1 {
     font-weight: 900;

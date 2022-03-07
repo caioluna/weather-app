@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(45deg, rgba(9,13,58,1) 40%, rgba(5,98,145,1) 100%);
+    background: linear-gradient(45deg, #0e4f6f 20%, #62a1c7 60%, #7bc7dd 100%);
     -webkit-font-smoothing: antialiased;
 
     width: 100%;

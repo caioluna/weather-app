@@ -31,7 +31,7 @@ export const Container = styled.form`
 
   .search-button {
     border-radius: 0 3px 3px 0;
-    background-color: rgba(9, 13, 58, 1);
+    background-color: #0c4a68;
     color: #fff;
     padding: 0 10px;
   }
